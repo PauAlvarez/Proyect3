@@ -1,0 +1,26 @@
+<%= form_for @fee, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :"Usuario", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :"Cantidad", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cantidadDinero, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Tiempo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tiempo, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Guardar", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("Cancelar")),
+                fees_path, :class => 'btn' %>
+  </div>
+<% end %>

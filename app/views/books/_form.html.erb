@@ -1,0 +1,65 @@
+<%= form_for @book, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :"ISBN 10", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :isbn10, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :"ISBN 13", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :isbn13, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group<%= @book.errors[:titulo].any? ? " error" : "" %>">
+    <%= f.label :"Título", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :titulo, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:titulo].any? ? @book.errors[:titulo].to_s[/\w([^"]*)/] : "" %></span>
+    </div>
+  </div>
+  <div class="control-group<%= @book.errors[:autor].any? ? " error" : "" %>">
+    <%= f.label :Autor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :autor, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:autor].any? ? @book.errors[:autor].to_s[/\w([^"]*)/] : "" %></span>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Editorial, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :editorial, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :"Categoría", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :categoria, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group<%= @book.errors[:cantidad].any? ? " error" : "" %>">
+    <%= f.label :Cantidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cantidad, :class => 'text_field' %>
+            <span class="help-inline">
+      <%= @book.errors[:cantidad].any? ? @book.errors[:cantidad].to_s[/\w([^"]*)/] : "" %></span>
+    </div>
+  </div>
+  <div class="control-group<%= @book.errors[:precio].any? ? " error" : "" %>">
+    <%= f.label :Precio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :precio, :class => 'text_field' %>
+       <span class="help-inline">
+      <%= @book.errors[:precio].any? ? @book.errors[:precio].to_s[/\w([^"]*)/] : "" %></span>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Guardar", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("Cancelar")),
+                books_path, :class => 'btn' %>
+  </div>
+<% end %>

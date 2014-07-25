@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  medioComunicacion: MyString
+  descripcionPromo: MyString
+  acuerdo: MyString
+  client_id: 1
+  user_id: 1
+  fecha: 2014-07-20
+
+two:
+  medioComunicacion: MyString
+  descripcionPromo: MyString
+  acuerdo: MyString
+  client_id: 1
+  user_id: 1
+  fecha: 2014-07-20

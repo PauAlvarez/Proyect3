@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numeropedido: MyString
+  fechapedido: 2014-07-20
+  fechaprogramada: 2014-07-20
+  fechaentregada: 2014-07-20
+  estatus: 1
+  user_id: 1
+  client_id: 1
+
+two:
+  numeropedido: MyString
+  fechapedido: 2014-07-20
+  fechaprogramada: 2014-07-20
+  fechaentregada: 2014-07-20
+  estatus: 1
+  user_id: 1
+  client_id: 1

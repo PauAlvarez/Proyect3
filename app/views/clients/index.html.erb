@@ -1,0 +1,50 @@
+<%- model_class = Client -%>
+<div class="page-header">
+  <h1><%#=t '.title', :default => model_class.model_name.human.pluralize.titleize %>Clientes</h1>
+</div>
+<table id="clients" class="table table-striped">
+  <thead>
+    <tr>
+
+      <th><%= model_class.human_attribute_name(:Nombre) %></th>
+      <!--<th><%= model_class.human_attribute_name(:"Dirección") %></th>-->
+      <th><%= model_class.human_attribute_name(:"Teléfono") %></th>
+      <th><%= model_class.human_attribute_name(:Email) %></th>
+     <th><%= model_class.human_attribute_name(:Facebook) %></th>
+      <!-- <th><%#= model_class.human_attribute_name(:LinkenId) %></th> -->
+     <!-- <th><%#= model_class.human_attribute_name(:Twitter) %></th> -->
+      <th><%=t '.actions', :default => t("Acciones") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+
+        <td><%=  client.nombreClient %></td>
+      <!-- <td><%= client.direccioncliente %></td>-->
+        <td><%= client.telefonoClient %></td>
+        <td><%= client.email %></td>
+        <td><%= client.facebook %></td>
+      <!--  <td><%= client.linkenId %></td>-->
+      <!--  <td><%= client.twitter %></td>-->
+        <td>
+          <%= link_to t('.show', :default => t("Detalles")),
+                      client_path(client), :class => 'btn btn-mini btn-info' %>
+          <%= link_to t('.edit', :default => t("Editar")),
+                      edit_client_path(client), :class => 'btn btn-mini' %>
+
+          <%= link_to t('.destroy', :default => t("Eliminar")),
+                      client_path(client),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("¿Está seguro de eliminar este registro?", :default => '¿Está seguro de eliminar este registro?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("Agregar cliente")),
+            new_client_path,
+            :class => 'btn btn-primary' %>

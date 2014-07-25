@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  cantidadDinero: 1
+  tiempo: 2014-07-20
+
+two:
+  user_id: 1
+  cantidadDinero: 1
+  tiempo: 2014-07-20

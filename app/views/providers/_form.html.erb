@@ -1,0 +1,49 @@
+<%= form_for @provider, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group<%= @provider.errors[:nombreEmpresa].any? ? " error" : "" %>">
+    <%= f.label :"Nombre de la empresa", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombreEmpresa, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @provider.errors[:nombreEmpresa].any? ? @provider.errors[:nombreEmpresa].to_s[/\w([^"]*)/] : "" %></span>
+    </div>
+  </div>
+
+  <div class="control-group<%= @provider.errors[:telefonoEmpresa].any? ? " error" : "" %>">
+    <%= f.label :"Teléfono", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefonoEmpresa, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @provider.errors[:telefonoEmpresa].any? ? @provider.errors[:telefonoEmpresa].to_s[/\w([^"]*)/] : "" %></span>
+    </div>
+    </div>
+
+
+
+  <div class="control-group">
+    <%= f.label :"Dirección", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccionEmpresa, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :"Contacto", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombreContacto, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group>
+    <%= f.label :"Correo Electrónico", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :correoElectronico, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+     
+   
+<%= f.submit "Guardar", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("Cancelar")),
+                providers_path, :class => 'btn' %>
+  </div>
+<% end %>

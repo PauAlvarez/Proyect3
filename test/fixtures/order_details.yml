@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_id: 1
+  order_id: 1
+  cantidad: 1
+  descuento: 1.5
+  preciouni: 1.5
+  cantidadtotal: 1.5
+  importe: 1.5
+
+two:
+  book_id: 1
+  order_id: 1
+  cantidad: 1
+  descuento: 1.5
+  preciouni: 1.5
+  cantidadtotal: 1.5
+  importe: 1.5

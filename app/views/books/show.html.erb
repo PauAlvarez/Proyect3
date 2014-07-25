@@ -1,0 +1,35 @@
+<%- model_class = Book -%>
+<div class="page-header">
+  <h1><%#=t '.title', :default => model_class.model_name.human.titleize %>Detalles</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:"ISBN 10") %>:</strong></dt>
+  <dd><%= @book.isbn10 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:"ISBN 13") %>:</strong></dt>
+  <dd><%= @book.isbn13 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:"Título") %>:</strong></dt>
+  <dd><%= @book.titulo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Autor) %>:</strong></dt>
+  <dd><%= @book.autor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Editorial) %>:</strong></dt>
+  <dd><%= @book.editorial %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:"Categoría") %>:</strong></dt>
+  <dd><%= @book.categoria %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Cantidad) %>:</strong></dt>
+  <dd><%= @book.cantidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Precio) %>:</strong></dt>
+  <dd><%= @book.precio %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("Ver registros")),
+              books_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("Editar")),
+              edit_book_path(@book), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("Eliminar")),
+              client_path(@book),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("¿Está seguro de eliminar este registro?", :default => '¿Está seguro de eliminar este registro?')) },
+              :class => 'btn btn-danger' %>
+</div>
